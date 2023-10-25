@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+        
+        .display {
+            grid-column: span 4;
+            padding: 10px;
+            font-size: 1.5em;
+            text-align: right;
+        }
+        
+        button {
+            padding: 15px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <button onclick="appendToDisplay(event)">1</button>
+        <button onclick="appendToDisplay(event)">2</button>
+        <button onclick="appendToDisplay(event)">3</button>
+        <button onclick="appendToDisplay(event, '+')">+</button>
+        <button onclick="appendToDisplay(event)">4</button>
+        <button onclick="appendToDisplay(event)">5</button>
+        <button onclick="appendToDisplay(event)">6</button>
+        <button onclick="appendToDisplay(event, '-')">-</button>
+        <button onclick="appendToDisplay(event)">7</button>
+        <button onclick="appendToDisplay(event)">8</button>
+        <button onclick="appendToDisplay(event)">9</button>
+        <button onclick="appendToDisplay(event, '*')">*</button>
+        <button onclick="appendToDisplay(event)">0</button>
+        <button onclick="clearDisplay()">AC</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendToDisplay(event, '/')">/</button>
+    </div>
+
+    <script src="index1.js"></script>
+</body>
+
+</html>

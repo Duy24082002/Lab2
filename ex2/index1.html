@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and Modify Submit Button</title>
+</head>
+<body>
+
+<div id="buttonContainer"></div>
+
+<script>
+    // Create a submit button
+    const btn = document.createElement('input');
+    btn.type = 'submit';
+    btn.value = 'Initial Text';
+
+    // Append the button to the container
+    document.getElementById('buttonContainer').appendChild(btn);
+
+    // Change the text on the button after a short delay
+    setTimeout(() => {
+        btn.value = 'Changed Text';
+    }, 2000); // 2000 milliseconds (2 seconds) delay
+</script>
+
+</body>
+</html>

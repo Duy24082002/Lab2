@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Size Detector</title>
+    <script>
+        // Function to get window dimensions
+        function getWindowSize() {
+            const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            // Display window dimensions
+            document.getElementById("width").textContent = `Window Width: ${width}px`;
+            document.getElementById("height").textContent = `Window Height: ${height}px`;
+        }
+
+        // Attach the function to window events
+        window.addEventListener("resize", getWindowSize);
+        
+        // Run the function on page load
+        window.addEventListener("load", getWindowSize);
+    </script>
+</head>
+<body>
+    <h1>Window Size Detector</h1>
+    <p id="width"></p>
+    <p id="height"></p>
+</body>
+</html>

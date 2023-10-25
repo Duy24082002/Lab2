@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hover Highlighter</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a id="highlightLink" href="#">Hover over me to highlight bold words</a>
+
+    <p>
+        This is a <strong>sample</strong> paragraph with some <strong>bold</strong> words.
+    </p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const link = document.getElementById("highlightLink");
+            const boldWords = document.querySelectorAll("strong");
+
+            link.addEventListener("mouseover", function () {
+                boldWords.forEach(word => {
+                    word.classList.add("highlight");
+                });
+            });
+
+            link.addEventListener("mouseout", function () {
+                boldWords.forEach(word => {
+                    word.classList.remove("highlight");
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+

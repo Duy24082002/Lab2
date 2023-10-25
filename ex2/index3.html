@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h1>Age Calculator</h1>
+    <form id="ageForm">
+        <label for="dob">Birthdate:</label>
+        <input type="date" id="dob" required>
+        <button type="button" id="calcBtn">Find Age</button>
+    </form>
+    <p id="output"></p>
+
+    <script>
+        const calcBtn = document.getElementById('calcBtn');
+        calcBtn.addEventListener('click', () => {
+            const dob = new Date(document.getElementById('dob').value);
+            const age = Math.floor((Date.now() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+            document.getElementById('output').textContent = `Age: ${age} years`;
+        });
+    </script>
+</body>
+</html>
+

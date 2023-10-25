@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Form and Fetch Button Value</title>
+</head>
+<body>
+
+<div id="formContainer"></div>
+<button onclick="showSubmitValue()">Show Submit Button Value</button>
+
+<script>
+    // Step 1: Create a submit button
+    const btn = document.createElement('input');
+    btn.type = 'submit';
+    btn.value = 'Initial Text';
+
+    // Step 2: Change the text on the button after a short delay
+    setTimeout(() => {
+        btn.value = 'Changed Text';
+    }, 2000); // 2 seconds delay
+
+    // Step 3: Create a form and append the button to it
+    const form = document.createElement('form');
+    form.appendChild(btn);
+    document.getElementById('formContainer').appendChild(form);
+
+    // Step 4: Function to get the value of the submit button
+    function getSubmitButtonValue() {
+        const submitButton = document.querySelector('input[type="submit"]');
+        return submitButton.value;
+    }
+
+    // Function to display the submit button's value
+    function showSubmitValue() {
+        alert('Submit button value: ' + getSubmitButtonValue());
+    }
+</script>
+
+</body>
+</html>
+
